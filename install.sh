@@ -40,24 +40,24 @@ function note_build_stage {
 # Update package list
 ################################################################################
 note_build_stage "Update package list"
-sudo -H apt-get -qq -y update
+sudo -H DEBIAN_FRONTEND=noninteractive apt-get -qq -y update
 
 # Install generic dependencies
 ################################################################################
 note_build_stage "Update misc. dependencies"
-sudo -H apt-get DEBIAN_FRONTEND=noninteractive -y install pkg-config zip g++ zlib1g-dev unzip curl git lsb-release
+sudo -H DEBIAN_FRONTEND=noninteractive apt-get -y install pkg-config zip g++ zlib1g-dev unzip curl git lsb-release
 
 # Install htslib dependencies
 ################################################################################
 note_build_stage "Install htslib dependencies"
-sudo -H apt-get DEBIAN_FRONTEND=noninteractive -y install libssl-dev libcurl4-openssl-dev liblz-dev libbz2-dev liblzma-dev
+sudo -H DEBIAN_FRONTEND=noninteractive apt-get -y install libssl-dev libcurl4-openssl-dev liblz-dev libbz2-dev liblzma-dev
 
 # Install pip
 ################################################################################
 note_build_stage "Update pip"
-sudo -H apt-get DEBIAN_FRONTEND=noninteractive -y install python3-dev python3-pip python3-wheel python3-setuptools
-sudo -H apt-get DEBIAN_FRONTEND=noninteractive -y update
-sudo -H apt-get -y install python-is-python3
+sudo -H DEBIAN_FRONTEND=noninteractive apt-get -y install python3-dev python3-pip python3-wheel python3-setuptools
+sudo -H DEBIAN_FRONTEND=noninteractive apt-get -y update
+sudo -H DEBIAN_FRONTEND=noninteractive apt-get -y install python-is-python3
 # TensorFlow 2.0 requires pip >= 19.0
 python3 -m pip install --user -U pip
 
