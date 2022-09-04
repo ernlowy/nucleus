@@ -7,7 +7,7 @@ RUN apt-get update && \
      && apt-get clean
 
 WORKDIR /tmp
-RUN git clone https://github.com/google/nucleus.git
+RUN git clone https://github.com/ernlowy/nucleus.git
 WORKDIR nucleus
 RUN bash install.sh
 
