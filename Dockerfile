@@ -9,6 +9,6 @@ RUN apt-get update && \
 WORKDIR /tmp
 RUN git clone https://github.com/ernlowy/nucleus.git
 WORKDIR nucleus
-#RUN bash install.sh
+RUN bash install.sh
 
 CMD /bin/bash
