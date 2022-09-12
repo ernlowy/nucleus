@@ -10,5 +10,6 @@ WORKDIR /tmp
 RUN git clone https://github.com/ernlowy/nucleus.git
 WORKDIR nucleus
 RUN bash install.sh
+ENV PATH="${PATH}:/root/bin/"
 
 CMD /bin/bash
